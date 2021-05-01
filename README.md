@@ -28,7 +28,7 @@ npm install
 npm start
 ```
 
-It will launch a local server in [localhost:3000](localhost:3000)
+It will launch a local server in [localhost:3000](http://localhost:3000)
 
 # Data stored :floppy_disk:
 
