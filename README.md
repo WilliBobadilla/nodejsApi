@@ -1,6 +1,6 @@
 # Node Rest API example :rocket:
 
-A basic node app to show the implementation of a Rest API with a basic CRUD for data about animals
+A basic node app to show the implementation of a Rest API with a basic CRUD for data about animals :dog:
 
 ## Intructions to run the project :dvd:
 
@@ -30,7 +30,7 @@ npm start
 
 It will launch a local server in [localhost:3000](localhost:3000)
 
-# Data stored
+# Data stored :floppy_disk:
 
 This CRUD is about animals in a vet, all the information is stored in the DB with the following schema
 
