@@ -7,13 +7,13 @@ A basic node app to show the implementation of a Rest API with a basic CRUD for 
 1. Clone the repository
 
 ```bash
-git clone blabla
+git clone https://github.com/WilliBobadilla/nodejsApi
 ```
 
 2. Enter in the folder
 
 ```bash
-cd NODETEST
+cd nodejsApi
 ```
 
 3. Install dependencies
