@@ -2,6 +2,10 @@
 
 A basic node app to show the implementation of a Rest API with a basic CRUD for data about animals :dog:
 
+## Requirements :books:
+
+1. Have installed [node.js](https://nodejs.org/en/)
+
 ## Intructions to run the project :dvd:
 
 1. Clone the repository
