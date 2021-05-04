@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    telefono: {
+    phoneNumber: {
       type: DataTypes.STRING,
       allowNull: true,
     },
