@@ -40,14 +40,14 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 - name: String
 - age: Integer
 - type: Integer
-- status: String
+- direction: String
 
 # EndPoints of the API :page_with_curl:
 
 1. Create Animal
 
    - HTTP Method: POST
-   - URL: http://localhost:3000/v1/animals/add
+   - URL: http://localhost:3000/v1/animals/
    - Body Parameters:
 
      - name: String
@@ -114,7 +114,7 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 4. Update an animal
 
    - HTTP Method: PUT
-   - URL: http://localhost:3000/v1/animals/{id}/update
+   - URL: http://localhost:3000/v1/animals/{id}
    - Body Parameters:
 
      - name: String
@@ -134,11 +134,11 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 
 5. Delete an animal
    - HTTP Method: DELETE
-   - URL: http://localhost:3000/v1/animals/{id}/delete
+   - URL: http://localhost:3000/v1/animals/{id}
    - Body response example:
      ```JS
          {
-             "msg": "Deleted succesully",
+             "msg": "Deleted successully",
              "id": "1"
          }
      ```
