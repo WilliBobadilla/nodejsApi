@@ -7,7 +7,7 @@ async function verifyUser(req, res, next) {
     return;
   }
   const verificationUser = await tokenUtil.decode(req.headers.authorization);
-  console.log(verificationUser);
+
   if (verificationUser) {
     next();
   } else {

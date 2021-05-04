@@ -5,11 +5,15 @@ const token = require("../utils/tokenUtil");
 /* POST method for user:
 Example data in body request:
   {
-    "name":"Pinkie",
-    "age":12,
-    "type":1,
-    "direction":"Fossati y Palma, San Antonio"
-  }
+    "name":"Williams",
+    "lastName":"Bobadilla",
+    "phoneNumber":"0979874",
+    "idNumber":"999999",
+    "email":"willi1997.1@gmail.com",
+    "password":"admin321",
+    "direction":"San antonio"
+
+}
 */
 async function add(req, res, next) {
   try {
@@ -33,6 +37,8 @@ async function get(req, res, next) {
 }
 /*GET method for user with id 
 fetchs user by id
+example in url, where id is a number:
+  baseUrl/user/{id}
 */
 async function getById(req, res, next) {
   try {
@@ -53,20 +59,39 @@ async function getById(req, res, next) {
 }
 /*PUT method for update User with id in url:
 example in url, where id is a number:
-  baseUrl/api/animal/{id}
-example data in body request, where :
-  {
-    "name":"pinkie",
-    "age":13,
-    "type":1
-    "direction":"boqueron y fossatti"
-  }
+  baseUrl/user/{id}
+example data in body request:
+ {
+    "name":"Williams",
+    "lastName":"Bobadilla",
+    "phoneNumber":"0979874",
+    "idNumber":"999999",
+    "email":"willi1997.1@gmail.com",
+    "password":"admin321",
+    "direction":"San antonio"
+
+}
+example response:
+{
+    "data": {
+        "id": 1,
+        "name": "Williams",
+        "lastName": "Bobadilla",
+        "phoneNumber": "777777777",
+        "idNumber": "7777777777",
+        "email": "willi1997.1@gmail.com",
+        "password": "admin321",
+        "direction": "San Roque",
+        "createdAt": "2021-05-04T16:59:44.866Z",
+        "updatedAt": "2021-05-04T17:00:54.495Z"
+    }
+}
 */
 async function update(req, res, next) {
   try {
     let data = req.body;
     let id = req.params.id;
-    const query = await Animal.findOne({ where: { id: id } });
+    const query = await User.findOne({ where: { id: id } });
     if (query == null) {
       res.status(404).json({
         error: "There is not User with id " + id,
@@ -83,14 +108,14 @@ async function update(req, res, next) {
     });
   }
 }
-/*DELETE metthod to remove data with id:
+/*DELETE metthod to remove User with id:
 example in url, where id is a number:
-  baseUrl/api/animal/id
+  baseUrl/user/{id}
 */
 async function remove(req, res, next) {
   try {
     let id = req.params.id;
-    const result = await Animal.destroy({ where: { id: id } });
+    const result = await User.destroy({ where: { id: id } });
     if (result === 1) {
       res.status(200).json({ msg: "Deleted succesully", id: id });
       return;
@@ -106,7 +131,30 @@ async function remove(req, res, next) {
     });
   }
 }
-
+/*
+Login function
+example data in body request:
+ {
+    "email":"willi1997.1@gmail.com",
+    "password":"admin321",
+}
+example response: 
+{
+    "user": {
+        "id": 1,
+        "name": "Williams",
+        "lastName": "Bobadilla",
+        "phoneNumber": "0979874",
+        "idNumber": "999999",
+        "email": "willi1997.1@gmail.com",
+        "password": "admin321",
+        "direction": "San antonio",
+        "createdAt": "2021-05-04T16:48:20.346Z",
+        "updatedAt": "2021-05-04T16:48:20.346Z"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxNDY5MDMsImV4cCI6MTYyMDE0NjkwM30.npdbfRrpBejtZAOZ1KfFKAb1jqNqzVrKUXMC7WTdhNo"
+}
+*/
 async function login(req, res, next) {
   try {
     let user = await User.findOne({
@@ -115,8 +163,6 @@ async function login(req, res, next) {
     console.log(user);
     if (user) {
       //there is an user in db
-      console.log("user" + user.password);
-      console.log("body");
       //let verifyPass = await bcrypt.compare(req.body.password, user.password);
       let verifyPass = req.body.password == user.password ? true : false;
       console.log(verifyPass);

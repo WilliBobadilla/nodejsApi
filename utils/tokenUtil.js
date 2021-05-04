@@ -13,7 +13,7 @@ async function checkToken(token) {
     const user = await User.findOne({ where: { id: currentUser.id } });
     if (user) {
       const token = jwt.sign({ _id: user.id }, SECRETKEY, {
-        expiresIn: "100",
+        expiresIn: "1h",
       });
       return token;
     } else {
