@@ -19,8 +19,6 @@
 
 <body>
 
-
-
     <h1 id="node-rest-api-example-rocket-">Node Rest API example :rocket:</h1>
     <p>A basic node app to show the implementation of a Rest API with a basic CRUD for data about animals :dog:</p>
     <h2 id="requirements-books-">Requirements :books:</h2>
@@ -32,22 +30,22 @@
         <li>Clone the repository</li>
     </ol>
     <pre><code class="lang-bash">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/WilliBobadilla/nodejsApi
-</code></pre>
+    </code></pre>
     <ol>
         <li>Enter in the folder</li>
     </ol>
     <pre><code class="lang-bash"><span class="hljs-built_in">cd</span> nodejsApi
-</code></pre>
+    </code></pre>
     <ol>
         <li>Install dependencies</li>
     </ol>
     <pre><code class="lang-bash">npm <span class="hljs-keyword">install</span>
-</code></pre>
+    </code></pre>
     <ol>
         <li>Run the server</li>
     </ol>
     <pre><code class="lang-bash"><span class="hljs-built_in">npm</span> start
-</code></pre>
+    </code></pre>
     <p>It will launch a local server in <a href="http://localhost:3000">localhost:3000</a></p>
     <h1 id="data-stored-floppy_disk-">Data stored :floppy_disk:</h1>
     <p>This CRUD is about animals in a vet, all the information is stored in the DB with the following schema</p>
@@ -88,16 +86,16 @@
                         <li>password: String</li>
                         <li>direction: String
                             <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
-{
-  <span class="hljs-string">"name"</span>:<span class="hljs-string">"Williams"</span>,
-  <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"Bobadilla"</span>,
-  <span class="hljs-string">"phoneNumber"</span>:<span class="hljs-string">"0979874"</span>,
-  <span class="hljs-string">"idNumber"</span>:<span class="hljs-string">"999999"</span>,
-  <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
-  <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>,
-  <span class="hljs-string">"direction"</span>:<span class="hljs-string">"San antonio"</span>
-}
-</code></pre>
+    {
+      <span class="hljs-string">"name"</span>:<span class="hljs-string">"Williams"</span>,
+      <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"Bobadilla"</span>,
+      <span class="hljs-string">"phoneNumber"</span>:<span class="hljs-string">"0979874"</span>,
+      <span class="hljs-string">"idNumber"</span>:<span class="hljs-string">"999999"</span>,
+      <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
+      <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>,
+      <span class="hljs-string">"direction"</span>:<span class="hljs-string">"San antonio"</span>
+    }
+    </code></pre>
                         </li>
                     </ul>
                 </li>
@@ -116,32 +114,32 @@
                         <li>
                             <p>password: String</p>
                             <pre><code class="lang-JS"> //example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
- {
-   <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
-   <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>
- }
-</code></pre>
+     {
+       <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
+       <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>
+     }
+    </code></pre>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <p>Response example:</p>
                     <pre><code class="lang-JS"> {
-   <span class="hljs-attr">"user"</span>: {
-     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Williams"</span>,
-     <span class="hljs-attr">"lastName"</span>: <span class="hljs-string">"Bobadilla"</span>,
-     <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"0979874"</span>,
-     <span class="hljs-attr">"idNumber"</span>: <span class="hljs-string">"999999"</span>,
-     <span class="hljs-attr">"email"</span>: <span class="hljs-string">"willi1997.1@gmail.com"</span>,
-     <span class="hljs-attr">"password"</span>: <span class="hljs-string">"admin321"</span>,
-     <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San antonio"</span>,
-     <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-05-04T16:59:44.866Z"</span>,
-     <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-05-04T16:59:44.866Z"</span>
-       },
-       <span class="hljs-attr">"token"</span>:    <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxNDc1ODcsImV4cCI6MTYyMDE0NzU4N30.xhG5tZAgeZ5Q1IpLFVdFKJj1FTh9pXGzeLMdR_snYtI"</span>
- }
-</code></pre>
+       <span class="hljs-attr">"user"</span>: {
+         <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+         <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Williams"</span>,
+         <span class="hljs-attr">"lastName"</span>: <span class="hljs-string">"Bobadilla"</span>,
+         <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"0979874"</span>,
+         <span class="hljs-attr">"idNumber"</span>: <span class="hljs-string">"999999"</span>,
+         <span class="hljs-attr">"email"</span>: <span class="hljs-string">"willi1997.1@gmail.com"</span>,
+         <span class="hljs-attr">"password"</span>: <span class="hljs-string">"admin321"</span>,
+         <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San antonio"</span>,
+         <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-05-04T16:59:44.866Z"</span>,
+         <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-05-04T16:59:44.866Z"</span>
+           },
+           <span class="hljs-attr">"token"</span>:    <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxNDc1ODcsImV4cCI6MTYyMDE0NzU4N30.xhG5tZAgeZ5Q1IpLFVdFKJj1FTh9pXGzeLMdR_snYtI"</span>
+     }
+    </code></pre>
                 </li>
             </ul>
         </li>
@@ -152,13 +150,63 @@
     </p>
     <ol>
         <li>
+            <p>Get all users</p>
+            <ul>
+                <li>HTTP Method: GET</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/user">http://localhost:3000/v1/user</a></li>
+                <li>Body response example:
+                    <pre><code class="lang-JS">[
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Williams"</span>,
+        <span class="hljs-attr">"lastName"</span>: <span class="hljs-string">"Bobadilla"</span>,
+        <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"777777"</span>,
+        <span class="hljs-attr">"idNumber"</span>: <span class="hljs-string">"123654789"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"willi1997.1@gmail.com"</span>,
+        <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San Roque"</span>,
+        <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-05-05T03:15:31.871Z"</span>,
+        <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-05-05T03:15:31.871Z"</span>
+      }
+    ]
+    </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Get User by id</p>
+            <ul>
+                <li>HTTP Method: GET</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/user/{id}">http://localhost:3000/v1/user/{id}</a></li>
+                <li>
+                    <p>Body response example:</p>
+                    <pre><code class="lang-JS">
+      {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Williams"</span>,
+        <span class="hljs-attr">"lastName"</span>: <span class="hljs-string">"Bobadilla"</span>,
+        <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"777777"</span>,
+        <span class="hljs-attr">"idNumber"</span>: <span class="hljs-string">"123654789"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"willi1997.1@gmail.com"</span>,
+        <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San Roque"</span>,
+        <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-05-05T03:15:31.871Z"</span>,
+        <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-05-05T03:15:31.871Z"</span>
+      }
+    </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
             <p>Update User</p>
             <ul>
                 <li>HTTP Method: PUT</li>
                 <li>Authorization: REQUIRED</li>
                 <li>URL: <a href="http://localhost:3000/v1/user/">http://localhost:3000/v1/user/</a></li>
                 <li>
-                    <p>Body Parameters:</p>
+                    <p>Body Parameters(just parameters to be added have to be in body):</p>
                     <ul>
                         <li>name: String</li>
                         <li>lastName: String</li>
@@ -169,17 +217,16 @@
                         <li>
                             <p>direction: String</p>
                             <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
-{
- <span class="hljs-string">"name"</span>:<span class="hljs-string">"Williams"</span>,
- <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"Bobadilla"</span>,
- <span class="hljs-string">"phoneNumber"</span>:<span class="hljs-string">"777777"</span>,
- <span class="hljs-string">"idNumber"</span>:<span class="hljs-string">"123654789"</span>,
- <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
- <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>,
- <span class="hljs-string">"direction"</span>:<span class="hljs-string">"San Roque"</span>
-
- }
-</code></pre>
+    {
+     <span class="hljs-string">"name"</span>:<span class="hljs-string">"Williams"</span>,
+     <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"Bobadilla"</span>,
+     <span class="hljs-string">"phoneNumber"</span>:<span class="hljs-string">"777777"</span>,
+     <span class="hljs-string">"idNumber"</span>:<span class="hljs-string">"123654789"</span>,
+     <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
+     <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>,
+     <span class="hljs-string">"direction"</span>:<span class="hljs-string">"San Roque"</span>
+     }
+    </code></pre>
                         </li>
                     </ul>
                 </li>
@@ -193,10 +240,10 @@
                 <li>URL: <a href="http://localhost:3000/v1/user/{id}">http://localhost:3000/v1/user/{id}</a></li>
                 <li>Body response example:
                     <pre><code class="lang-JS">   {
-       <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Deleted successully"</span>,
-       <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>
-   }
-</code></pre>
+           <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Deleted successully"</span>,
+           <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>
+       }
+    </code></pre>
                 </li>
             </ul>
         </li>
@@ -221,13 +268,13 @@
                         <li>
                             <p>direction: String</p>
                             <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
-{
-   <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
-   <span class="hljs-string">"age"</span>:<span class="hljs-number">10</span>,
-   <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
-   <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>
-}
-</code></pre>
+    {
+       <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
+       <span class="hljs-string">"age"</span>:<span class="hljs-number">10</span>,
+       <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
+       <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>
+    }
+    </code></pre>
                         </li>
                     </ul>
                 </li>
@@ -242,26 +289,26 @@
                 <li>
                     <p>Body response example:</p>
                     <pre><code class="lang-JS">//example <span class="hljs-keyword">of</span> request response:
-[ {
-   <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>
-   <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
-   <span class="hljs-string">"age"</span>:<span class="hljs-number">10</span>,
-   <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
-   <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>,
-   <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>,
-   <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>
- },
- {
-   <span class="hljs-string">"id"</span>:<span class="hljs-number">2</span>
-   <span class="hljs-string">"name"</span>:<span class="hljs-string">"Dobbie"</span>,
-   <span class="hljs-string">"age"</span>:<span class="hljs-number">3</span>,
-   <span class="hljs-string">"type"</span>:<span class="hljs-number">1</span>,
-   <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Bartolome mitre, San Lorenzo"</span>,
-   <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:04:08.837Z"</span>,
-   <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:04:08.837Z"</span>
- }
-]
-</code></pre>
+    [ {
+       <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>
+       <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
+       <span class="hljs-string">"age"</span>:<span class="hljs-number">10</span>,
+       <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
+       <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>,
+       <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>,
+       <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>
+     },
+     {
+       <span class="hljs-string">"id"</span>:<span class="hljs-number">2</span>
+       <span class="hljs-string">"name"</span>:<span class="hljs-string">"Dobbie"</span>,
+       <span class="hljs-string">"age"</span>:<span class="hljs-number">3</span>,
+       <span class="hljs-string">"type"</span>:<span class="hljs-number">1</span>,
+       <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Bartolome mitre, San Lorenzo"</span>,
+       <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:04:08.837Z"</span>,
+       <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:04:08.837Z"</span>
+     }
+    ]
+    </code></pre>
                 </li>
             </ul>
         </li>
@@ -274,15 +321,15 @@
                 <li>
                     <p>Body response example:</p>
                     <pre><code class="lang-JS">{
-   <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
-   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Blanquie"</span>,
-   <span class="hljs-attr">"age"</span>: <span class="hljs-number">12</span>,
-   <span class="hljs-attr">"type"</span>: <span class="hljs-number">1</span>,
-   <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San Francisco"</span>,
-   <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>,
-   <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>
-}
-</code></pre>
+       <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+       <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Blanquie"</span>,
+       <span class="hljs-attr">"age"</span>: <span class="hljs-number">12</span>,
+       <span class="hljs-attr">"type"</span>: <span class="hljs-number">1</span>,
+       <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San Francisco"</span>,
+       <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>,
+       <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>
+    }
+    </code></pre>
                 </li>
             </ul>
         </li>
@@ -301,13 +348,13 @@
                         <li>
                             <p>direction: String</p>
                             <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
-{
-    <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
-    <span class="hljs-string">"age"</span>:<span class="hljs-number">11</span>,
-    <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
-    <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>
-}
-</code></pre>
+    {
+        <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
+        <span class="hljs-string">"age"</span>:<span class="hljs-number">11</span>,
+        <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>
+    }
+    </code></pre>
                         </li>
                     </ul>
                 </li>
@@ -321,32 +368,31 @@
                 <li>URL: <a href="http://localhost:3000/v1/animals/{id}">http://localhost:3000/v1/animals/{id}</a></li>
                 <li>Body response example:
                     <pre><code class="lang-JS">    {
-        <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Deleted successully"</span>,
-        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>
-    }
-</code></pre>
+            <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Deleted successully"</span>,
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>
+        }
+    </code></pre>
                 </li>
             </ul>
         </li>
     </ol>
-    <h1 id="notes-clipboard-">Notes :clipboard:</h1>
+    <h1 id="notes-to-do-clipboard-">Notes-To Do :clipboard:</h1>
     <ol>
         <li>Now all users can delete to another user, so we have to add a role and also the validations for that</li>
+        <li>Add encription for password storage</li>
     </ol>
-    <h2 id="license-page_facing_up-">License :page_facing_up:</h2>
+    <h1 id="license-page_facing_up-">License :page_facing_up:</h1>
     <p>Copyright 2021 Williams Bobadilla</p>
     <p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
         you may not use this file except in compliance with the License.
         You may obtain a copy of the License at</p>
     <pre><code><span class="hljs-symbol">http:</span>//www.apache<span class="hljs-meta">.org</span>/licenses/LICENSE<span class="hljs-number">-2.0</span>
-</code></pre>
+    </code></pre>
     <p>Unless required by applicable law or agreed to in writing, software
         distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
         See the License for the specific language governing permissions and
         limitations under the License.</p>
-
-
 </body>
 
 </html>
