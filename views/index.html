@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <title>Api Documentation</title>
+</head>
+
+<body>
+
+
+
+    <h1 id="node-rest-api-example-rocket-">Node Rest API example :rocket:</h1>
+    <p>A basic node app to show the implementation of a Rest API with a basic CRUD for data about animals :dog:</p>
+    <h2 id="requirements-books-">Requirements :books:</h2>
+    <ol>
+        <li>Have installed <a href="https://nodejs.org/en/">node.js</a></li>
+    </ol>
+    <h2 id="intructions-to-run-the-project-dvd-">Intructions to run the project :dvd:</h2>
+    <ol>
+        <li>Clone the repository</li>
+    </ol>
+    <pre><code class="lang-bash">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/WilliBobadilla/nodejsApi
+</code></pre>
+    <ol>
+        <li>Enter in the folder</li>
+    </ol>
+    <pre><code class="lang-bash"><span class="hljs-built_in">cd</span> nodejsApi
+</code></pre>
+    <ol>
+        <li>Install dependencies</li>
+    </ol>
+    <pre><code class="lang-bash">npm <span class="hljs-keyword">install</span>
+</code></pre>
+    <ol>
+        <li>Run the server</li>
+    </ol>
+    <pre><code class="lang-bash"><span class="hljs-built_in">npm</span> start
+</code></pre>
+    <p>It will launch a local server in <a href="http://localhost:3000">localhost:3000</a></p>
+    <h1 id="data-stored-floppy_disk-">Data stored :floppy_disk:</h1>
+    <p>This CRUD is about animals in a vet, all the information is stored in the DB with the following schema</p>
+    <h3 id="animals">Animals</h3>
+    <ul>
+        <li>id: Integer (PK)</li>
+        <li>name: String</li>
+        <li>age: Integer</li>
+        <li>type: Integer</li>
+        <li>direction: String</li>
+    </ul>
+    <h2 id="user">User</h2>
+    <ul>
+        <li>id: Integer(PK)</li>
+        <li>name: String</li>
+        <li>lastName: String</li>
+        <li>phoneNumber: String</li>
+        <li>idNumber: String</li>
+        <li>email: String</li>
+        <li>password: String</li>
+        <li>direction: String</li>
+    </ul>
+    <h1 id="endpoints-of-the-api-page_with_curl-">EndPoints of the API :page_with_curl:</h1>
+    <h2 id="user-endpoints">User endpoints</h2>
+    <ol>
+        <li>
+            <p>Create User</p>
+            <ul>
+                <li>HTTP Method: POST</li>
+                <li>Authorization: NOT REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/user/">http://localhost:3000/v1/user/</a></li>
+                <li>Body Parameters:<ul>
+                        <li>name: String</li>
+                        <li>lastName: String</li>
+                        <li>phoneNumber: String</li>
+                        <li>idNumber: String</li>
+                        <li>email: String</li>
+                        <li>password: String</li>
+                        <li>direction: String
+                            <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
+{
+  <span class="hljs-string">"name"</span>:<span class="hljs-string">"Williams"</span>,
+  <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"Bobadilla"</span>,
+  <span class="hljs-string">"phoneNumber"</span>:<span class="hljs-string">"0979874"</span>,
+  <span class="hljs-string">"idNumber"</span>:<span class="hljs-string">"999999"</span>,
+  <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
+  <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>,
+  <span class="hljs-string">"direction"</span>:<span class="hljs-string">"San antonio"</span>
+}
+</code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Login with your User</p>
+            <ul>
+                <li>HTTP Method: POST</li>
+                <li>Authorization: NOT REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/user/login">http://localhost:3000/v1/user/login</a></li>
+                <li>
+                    <p>Body Parameters:</p>
+                    <ul>
+                        <li>email: String</li>
+                        <li>
+                            <p>password: String</p>
+                            <pre><code class="lang-JS"> //example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
+ {
+   <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
+   <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>
+ }
+</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Response example:</p>
+                    <pre><code class="lang-JS"> {
+   <span class="hljs-attr">"user"</span>: {
+     <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Williams"</span>,
+     <span class="hljs-attr">"lastName"</span>: <span class="hljs-string">"Bobadilla"</span>,
+     <span class="hljs-attr">"phoneNumber"</span>: <span class="hljs-string">"0979874"</span>,
+     <span class="hljs-attr">"idNumber"</span>: <span class="hljs-string">"999999"</span>,
+     <span class="hljs-attr">"email"</span>: <span class="hljs-string">"willi1997.1@gmail.com"</span>,
+     <span class="hljs-attr">"password"</span>: <span class="hljs-string">"admin321"</span>,
+     <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San antonio"</span>,
+     <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-05-04T16:59:44.866Z"</span>,
+     <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-05-04T16:59:44.866Z"</span>
+       },
+       <span class="hljs-attr">"token"</span>:    <span class="hljs-string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxNDc1ODcsImV4cCI6MTYyMDE0NzU4N30.xhG5tZAgeZ5Q1IpLFVdFKJj1FTh9pXGzeLMdR_snYtI"</span>
+ }
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <p>Note: In this point, all the requests to the Animal endpoints and User endpoints have to have the
+        <strong>Authorization</strong> parameter in header of the request, this authorization parameter is the
+        <strong>token</strong> in the response of the login!
+    </p>
+    <ol>
+        <li>
+            <p>Update User</p>
+            <ul>
+                <li>HTTP Method: PUT</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/user/">http://localhost:3000/v1/user/</a></li>
+                <li>
+                    <p>Body Parameters:</p>
+                    <ul>
+                        <li>name: String</li>
+                        <li>lastName: String</li>
+                        <li>phoneNumber: String</li>
+                        <li>idNumber: String</li>
+                        <li>email: String</li>
+                        <li>password: String</li>
+                        <li>
+                            <p>direction: String</p>
+                            <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
+{
+ <span class="hljs-string">"name"</span>:<span class="hljs-string">"Williams"</span>,
+ <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"Bobadilla"</span>,
+ <span class="hljs-string">"phoneNumber"</span>:<span class="hljs-string">"777777"</span>,
+ <span class="hljs-string">"idNumber"</span>:<span class="hljs-string">"123654789"</span>,
+ <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
+ <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>,
+ <span class="hljs-string">"direction"</span>:<span class="hljs-string">"San Roque"</span>
+
+ }
+</code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Delete User</p>
+            <ul>
+                <li>HTTP Method: DELETE</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/user/{id}">http://localhost:3000/v1/user/{id}</a></li>
+                <li>Body response example:
+                    <pre><code class="lang-JS">   {
+       <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Deleted successully"</span>,
+       <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>
+   }
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <p>Important Note: Is not implemented yet the verification of who is deleting the user account, so for now, whatever
+        user can delete whatever account! In this case we have to filter just if the user is deleting his own account!
+    </p>
+    <h2 id="animal-endpoints">Animal endpoints</h2>
+    <ol>
+        <li>
+            <p>Create Animal</p>
+            <ul>
+                <li>HTTP Method: POST</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/animals/">http://localhost:3000/v1/animals/</a></li>
+                <li>
+                    <p>Body Parameters:</p>
+                    <ul>
+                        <li>name: String</li>
+                        <li>age: Integer</li>
+                        <li>type: Integer</li>
+                        <li>
+                            <p>direction: String</p>
+                            <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
+{
+   <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
+   <span class="hljs-string">"age"</span>:<span class="hljs-number">10</span>,
+   <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
+   <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>
+}
+</code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>List animals</p>
+            <ul>
+                <li>HTTP Method: GET</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/animals">http://localhost:3000/v1/animals</a></li>
+                <li>
+                    <p>Body response example:</p>
+                    <pre><code class="lang-JS">//example <span class="hljs-keyword">of</span> request response:
+[ {
+   <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>
+   <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
+   <span class="hljs-string">"age"</span>:<span class="hljs-number">10</span>,
+   <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
+   <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>,
+   <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>,
+   <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>
+ },
+ {
+   <span class="hljs-string">"id"</span>:<span class="hljs-number">2</span>
+   <span class="hljs-string">"name"</span>:<span class="hljs-string">"Dobbie"</span>,
+   <span class="hljs-string">"age"</span>:<span class="hljs-number">3</span>,
+   <span class="hljs-string">"type"</span>:<span class="hljs-number">1</span>,
+   <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Bartolome mitre, San Lorenzo"</span>,
+   <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:04:08.837Z"</span>,
+   <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:04:08.837Z"</span>
+ }
+]
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Get an animal</p>
+            <ul>
+                <li>HTTP Method: GET</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/animals/{id}">http://localhost:3000/v1/animals/{id}</a></li>
+                <li>
+                    <p>Body response example:</p>
+                    <pre><code class="lang-JS">{
+   <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Blanquie"</span>,
+   <span class="hljs-attr">"age"</span>: <span class="hljs-number">12</span>,
+   <span class="hljs-attr">"type"</span>: <span class="hljs-number">1</span>,
+   <span class="hljs-attr">"direction"</span>: <span class="hljs-string">"San Francisco"</span>,
+   <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>,
+   <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2021-04-30T23:03:07.837Z"</span>
+}
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Update an animal</p>
+            <ul>
+                <li>HTTP Method: PUT</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/animals/{id}">http://localhost:3000/v1/animals/{id}</a></li>
+                <li>
+                    <p>Body Parameters:</p>
+                    <ul>
+                        <li>name: String</li>
+                        <li>age: Integer</li>
+                        <li>type: Integer</li>
+                        <li>
+                            <p>direction: String</p>
+                            <pre><code class="lang-JS">//example data <span class="hljs-keyword">for</span> <span class="hljs-keyword">body</span>:
+{
+    <span class="hljs-string">"name"</span>:<span class="hljs-string">"Pinkie"</span>,
+    <span class="hljs-string">"age"</span>:<span class="hljs-number">11</span>,
+    <span class="hljs-string">"type"</span>:<span class="hljs-number">0</span>,
+    <span class="hljs-string">"direction"</span>:<span class="hljs-string">"Fossati y Palma, San Antonio"</span>
+}
+</code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>Delete an animal</p>
+            <ul>
+                <li>HTTP Method: DELETE</li>
+                <li>Authorization: REQUIRED</li>
+                <li>URL: <a href="http://localhost:3000/v1/animals/{id}">http://localhost:3000/v1/animals/{id}</a></li>
+                <li>Body response example:
+                    <pre><code class="lang-JS">    {
+        <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"Deleted successully"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>
+    }
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <h1 id="notes-clipboard-">Notes :clipboard:</h1>
+    <ol>
+        <li>Now all users can delete to another user, so we have to add a role and also the validations for that</li>
+    </ol>
+    <h2 id="license-page_facing_up-">License :page_facing_up:</h2>
+    <p>Copyright 2021 Williams Bobadilla</p>
+    <p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at</p>
+    <pre><code><span class="hljs-symbol">http:</span>//www.apache<span class="hljs-meta">.org</span>/licenses/LICENSE<span class="hljs-number">-2.0</span>
+</code></pre>
+    <p>Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.</p>
+
+
+</body>
+
+</html>
