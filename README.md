@@ -61,7 +61,7 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 
 ## User to test the API
 
-Data to send in point 2 of the User endpoint: [http://localhost:3000/v1/user/login]
+Data to send in point 2 of the User endpoint: http://localhost:3000/v1/user/login
 
 ```JS
 //body data, to login and to test the api
