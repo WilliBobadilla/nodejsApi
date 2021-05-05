@@ -126,12 +126,59 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 
 Note: In this point, all the requests to the Animal endpoints and User endpoints have to have the **Authorization** parameter in header of the request, this authorization parameter is the **token** in the response of the login!
 
-3. Update User
+3. Get all users
+
+   - HTTP Method: GET
+   - Authorization: REQUIRED
+   - URL: http://localhost:3000/v1/user
+   - Body response example:
+     ```JS
+     [
+       {
+         "id": 1,
+         "name": "Williams",
+         "lastName": "Bobadilla",
+         "phoneNumber": "777777",
+         "idNumber": "123654789",
+         "email": "willi1997.1@gmail.com",
+         "password": "",
+         "direction": "San Roque",
+         "createdAt": "2021-05-05T03:15:31.871Z",
+         "updatedAt": "2021-05-05T03:15:31.871Z"
+       }
+     ]
+     ```
+
+4. Get User by id
+
+   - HTTP Method: GET
+   - Authorization: REQUIRED
+   - URL: http://localhost:3000/v1/user/{id}
+   - Body response example:
+
+     ```JS
+
+       {
+         "id": 1,
+         "name": "Williams",
+         "lastName": "Bobadilla",
+         "phoneNumber": "777777",
+         "idNumber": "123654789",
+         "email": "willi1997.1@gmail.com",
+         "password": "",
+         "direction": "San Roque",
+         "createdAt": "2021-05-05T03:15:31.871Z",
+         "updatedAt": "2021-05-05T03:15:31.871Z"
+       }
+
+     ```
+
+5. Update User
 
    - HTTP Method: PUT
    - Authorization: REQUIRED
    - URL: http://localhost:3000/v1/user/
-   - Body Parameters:
+   - Body Parameters(just parameters to be added have to be in body):
 
      - name: String
      - lastName: String
@@ -151,11 +198,10 @@ Note: In this point, all the requests to the Animal endpoints and User endpoints
         "email":"willi1997.1@gmail.com",
         "password":"admin321",
         "direction":"San Roque"
-
         }
        ```
 
-4. Delete User
+6. Delete User
 
    - HTTP Method: DELETE
    - Authorization: REQUIRED
