@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "ce3b8216-0383-47eb-8197-f3801cde174c",
+		"name": "AnimalApi",
+		"description": "API to save data in the DataBase, also it has a middleware to check the login of the user to use the API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "localhost:3000/v1/user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"name\":\"Williams\",\n \"lastName\":\"Bobadilla\",\n \"phoneNumber\":\"777777\",\n \"idNumber\":\"123654789\",\n \"email\":\"willi1997.1@gmail.com\",\n \"password\":\"admin321\",\n \"direction\":\"San Roque\"\n\n }"
+						},
+						"url": {
+							"raw": "localhost:3000/v1/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user"
+							]
+						},
+						"description": "# Create a new User"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/user/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\":\"willi1997.1@gmail.com\",\n\"password\":\"admin321\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/v1/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"login"
+							]
+						},
+						"description": "# Login user with email and password"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/user/1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxNDY5MDMsImV4cCI6MTYyMDE0NjkwM30.npdbfRrpBejtZAOZ1KfFKAb1jqNqzVrKUXMC7WTdhNo",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Williams\",\n    \"lastName\":\"Bobadilla\",\n    \"phoneNumber\":\"777777777\",\n    \"idNumber\":\"7777777777\",\n    \"email\":\"willi1997.1@gmail.com\",\n    \"password\":\"admin321\",\n    \"direction\":\"San Roque\"\n\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/v1/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"1"
+							]
+						},
+						"description": "# Update information of a user by id provided and body"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxODQ1MzQsImV4cCI6MTYyMDE4NDUzNH0.4MrvmEXFPG_b7taBuGwATedF-KSTdufjMWzszbQx71c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/v1/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user"
+							]
+						},
+						"description": "# Get all users of the db"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/user/1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxODQ1MzQsImV4cCI6MTYyMDE4NDUzNH0.4MrvmEXFPG_b7taBuGwATedF-KSTdufjMWzszbQx71c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/v1/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"1"
+							]
+						},
+						"description": "# Get user by id"
+					},
+					"response": []
+				}
+			],
+			"description": "All related to the user endpoints"
+		},
+		{
+			"name": "animal",
+			"item": [
+				{
+					"name": "localhost:3000/v1/animal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxODIxMTMsImV4cCI6MTYyMDE4MjExM30.RWnShqxUiGQGqlYvINHXQ8JKJfD1h3GR1xO-PQRFhRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\":\"Pinkie\",\n   \"age\":10,\n   \"type\":0,\n   \"direction\":\"Fossati y Palma, San Antonio\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/v1/animal",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"animal"
+							]
+						},
+						"description": "# Add a new animal in db"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/animal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxODIxMTMsImV4cCI6MTYyMDE4MjExM30.RWnShqxUiGQGqlYvINHXQ8JKJfD1h3GR1xO-PQRFhRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/v1/animal",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"animal"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "# Get all animals of the db"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/animal/2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxODIxMTMsImV4cCI6MTYyMDE4MjExM30.RWnShqxUiGQGqlYvINHXQ8JKJfD1h3GR1xO-PQRFhRc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \n        \"name\": \"pinkiesss\",\n        \"age\": 34,\n        \"type\": 1,\n        \"direction\": \"si siiiiii\"\n        \n    }"
+						},
+						"url": {
+							"raw": "localhost:3000/v1/animal/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"animal",
+								"2"
+							]
+						},
+						"description": "# Get animal by id"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/animal/1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxODMxNjksImV4cCI6MTYyMDE4MzE2OX0.sZEMm5FybF3tuYqUF-hl4ckuDWl1YvNvI7rxb-3B2u4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/v1/animal/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"animal",
+								"1"
+							]
+						},
+						"description": "# Get an animal by id"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/v1/animal/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ3aWxsaTE5OTcuMUBnbWFpbC5jb20iLCJpYXQiOjE2MjAxODIxMTMsImV4cCI6MTYyMDE4MjExM30.RWnShqxUiGQGqlYvINHXQ8JKJfD1h3GR1xO-PQRFhRc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/v1/animal/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"animal",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "# Delete an animal by id"
+					},
+					"response": []
+				}
+			],
+			"description": "# Animal endpoints to interactuate with the API"
+		}
+	]
+}
