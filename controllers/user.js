@@ -1,6 +1,5 @@
 //user controller
 const { User } = require("../sequelize");
-const bcrypt = require("bcryptjs");
 const token = require("../utils/tokenUtil");
 
 /* POST method for user:
@@ -21,7 +20,10 @@ async function add(req, res, next) {
     const user = await User.create(req.body);
     res.status(200).json(user);
   } catch (error) {
-    res.json({ error: error });
+    res.status(500).json({
+      error: error,
+      message: "There was an error",
+    });
   }
 }
 
@@ -41,7 +43,10 @@ async function get(req, res, next) {
 
     res.status(200).json(query);
   } catch (error) {
-    res.status(500).json({ error: error });
+    res.status(500).json({
+      error: error,
+      message: "There was an error",
+    });
   }
 }
 /*GET method for user with id 
@@ -104,13 +109,13 @@ async function update(req, res, next) {
     const query = await User.findOne({ where: { id: id } });
     if (query == null) {
       res.status(404).json({
-        error: "There is not User with id " + id,
+        error: "There is not register with id " + id,
         message: "There was an error",
       });
       return;
     }
     const dataUpdated = await query.update(data);
-    res.status(200).json({ data: dataUpdated });
+    res.status(200).json({ dataUpdated });
   } catch (error) {
     res.status(500).json({
       error: error,
@@ -172,7 +177,6 @@ async function login(req, res, next) {
     });
     if (user) {
       //there is an user in db
-      //let verifyPass = await bcrypt.compare(req.body.password, user.password);
       let verifyPass = req.body.password == user.password ? true : false;
       console.log(verifyPass);
       if (verifyPass) {
@@ -181,15 +185,24 @@ async function login(req, res, next) {
         res.status(200).json({ user: user, token: generatedToken });
       } else {
         //pass incorrect, but we don't have to say explicitly the error
-        res.status(200).json({ msg: "Wrong Password or Email" });
+        res.status(404).json({
+          error: "Wrong password or email",
+          message: "There was an error",
+        });
       }
     } else {
       //user not found, but we don't have to say explicitly the error again
-      res.status(200).json({ msg: "Wrong Password or Email" });
+      res.status(404).json({
+        error: "Wrong password or email",
+        message: "There was an error",
+      });
     }
   } catch (error) {
     console.log(error);
-    res.status(500).json({ msg: "Internal Server Error" });
+    res.status(500).json({
+      error: error,
+      message: "There was an error",
+    });
   }
 }
 

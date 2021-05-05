@@ -14,7 +14,10 @@ async function add(req, res, next) {
     const register = await Animal.create(req.body);
     res.status(200).json(register);
   } catch (error) {
-    res.status(500).json({ error: error });
+    res.status(500).json({
+      error: error,
+      message: "There was an error",
+    });
   }
 }
 
@@ -26,7 +29,10 @@ async function get(req, res, next) {
     const query = await Animal.findAll();
     res.status(200).json(query);
   } catch (error) {
-    res.status(500).json({ error: error });
+    res.status(500).json({
+      error: error,
+      message: "There was an error",
+    });
   }
 }
 /*GET method for animals with id 
@@ -74,7 +80,7 @@ async function update(req, res, next) {
       return;
     }
     const dataUpdated = await query.update(data);
-    res.status(200).json({ data: dataUpdated });
+    res.status(200).json({ dataUpdated });
   } catch (error) {
     res.status(500).json({
       error: error,

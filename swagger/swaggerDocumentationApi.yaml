@@ -26,6 +26,7 @@ schemes:
 - "http"
 
 paths:
+#animal endpoints
   /animals:
     get:
       tags:
@@ -40,8 +41,10 @@ paths:
           description: "Successful operation" 
           schema:
             $ref: "#/definitions/AnimalArrayResponse"
-        "400":
-          description: "Invalid status value"
+        "500":
+          description: "Internal server error"
+          schema:
+            $ref: "#/definitions/500"
 
     post:
       tags:
@@ -66,10 +69,13 @@ paths:
       responses:
         "200":
           description: "Successful operation"
-        "405":
-          description: "Invalid input"
+          schema:
+            $ref: "#/definitions/AnimalResponse"
+        
         "500":
           description: "Internal Server Error" 
+          schema:
+            $ref: "#/definitions/500"
 
       
 
@@ -95,8 +101,16 @@ paths:
           description: "Successful operation"
           schema:
               $ref: "#/definitions/AnimalWithId"
-        "400":
-          description: "Invalid tag value"
+        "404":
+          description: "Id not found"
+          schema:
+            $ref: "#/definitions/404"
+        
+        "500":
+          description: "Internal Server Error" 
+          schema:
+            $ref: "#/definitions/500"
+          
 
     put:
       tags:
@@ -127,10 +141,18 @@ paths:
       responses:
         "200":
           description: "Successful operation"
+          schema:
+            $ref: "#/definitions/AnimalResponse"
         "404":
           description: "Animal not found"
+          schema:
+            $ref: "#/definitions/404"
+          
         "500":
           description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
+          
 
     delete:
       tags:
@@ -158,9 +180,15 @@ paths:
 
         "404":
           description: "Animal not found"
+          schema:
+            $ref: "#/definitions/404"
+          
         "500":
           description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
 
+#user enpoints 
   /user:
     post:
       tags:
@@ -191,6 +219,8 @@ paths:
 
         "500":
           description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
 
     
 
@@ -207,8 +237,12 @@ paths:
           description: "Successful operation" 
           schema:
             $ref: "#/definitions/UserArrayResponse"
-        "400":
-          description: "Invalid status value"
+
+          
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
 
           
 
@@ -240,10 +274,15 @@ paths:
           schema:
             $ref: "#/definitions/LoginResponse"
 
-        "405":
-          description: "Invalid input"
+        "404":
+          description: "Wrong email or password"
+          schema:
+            $ref: "#/definitions/404"
+          
         "500":
           description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
 
   
 
@@ -267,8 +306,16 @@ paths:
           description: "Successful operation" 
           schema:
             $ref: "#/definitions/UserResponse"
-        "400":
-          description: "Invalid status value"
+        
+        "404":
+          description: "User not found"
+          schema:
+            $ref: "#/definitions/404"
+        
+        "500":
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
   
   
   
@@ -309,8 +356,14 @@ paths:
             $ref: "#/definitions/UserResponse"
         "404":
           description: "User not found"
+          schema:
+            $ref: "#/definitions/404"
+        
         "500":
           description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
+  
 
           
 
@@ -340,9 +393,15 @@ paths:
             $ref: "#/definitions/DeleteResponse"
 
         "404":
-          description: "Animal not found"
+          description: "User not found"
+          schema:
+            $ref: "#/definitions/404"
+        
         "500":
           description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/500"
+  
 
   
 
@@ -390,7 +449,6 @@ definitions:
   
 
   AnimalResponse:
-
     type: "object"
     properties:
       id:
@@ -419,6 +477,7 @@ definitions:
     items:
       $ref: '#/definitions/AnimalResponse'
 
+
   
   DeleteResponse:
     type: "object"
@@ -431,7 +490,7 @@ definitions:
         
 
         
-
+# User models
   User: 
     type: "object"
     properties: 
@@ -476,6 +535,7 @@ definitions:
         type: "string"
 
   
+  
 
   UserWithId: 
     type: "object"
@@ -518,6 +578,28 @@ definitions:
         type: "string"
       password:
         type: "string"
+        
+        
+        
+  #code status responses
+  404:
+    type: "object"
+    properties:
+      error:
+        type: "string"
+      message:
+        type: "string"
+  
+  500: 
+    type: "object"
+    properties:
+      error:
+        type: "string"
+      message:
+        type: "string"
+  
+      
+  
 
 
 externalDocs:
