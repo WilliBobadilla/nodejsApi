@@ -2,9 +2,16 @@
 
 A basic node app to show the implementation of a Rest API with a basic CRUD for data about animals :dog:
 
-## Requirements :books:
+# Requirements :books:
 
 1. Have installed [node.js](https://nodejs.org/en/)
+
+# Postman collection and swagger documentation :mailbox:
+
+You can found this resources at:
+
+- [Postman](https://github.com/WilliBobadilla/nodejsApi/tree/master/postman)
+- [Swagger](https://github.com/WilliBobadilla/nodejsApi/tree/master/swagger)
 
 ## Intructions to run the project :dvd:
 
@@ -56,13 +63,6 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 - email: String
 - password: String
 - direction: String
-
-# Postman collection and swagger documentation :mailbox:
-
-You can found this resources at:
-
-- [Postman](https://github.com/WilliBobadilla/nodejsApi/tree/master/postman)
-- [Swagger](https://github.com/WilliBobadilla/nodejsApi/tree/master/swagger)
 
 # EndPoints of the API :page_with_curl:
 
