@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <h1 id="node-rest-api-example-rocket-">Node Rest API example :rocket:</h1>
     <p>A basic node app to show the implementation of a Rest API with a basic CRUD for data about animals :dog:</p>
     <h2 id="requirements-books-">Requirements :books:</h2>
@@ -69,6 +68,15 @@
         <li>direction: String</li>
     </ul>
     <h1 id="endpoints-of-the-api-page_with_curl-">EndPoints of the API :page_with_curl:</h1>
+    <h2 id="user-to-test-the-api">User to test the API</h2>
+    <p>Data to send in point 2 of the User endpoint: [<a
+            href="http://localhost:3000/v1/user/login">http://localhost:3000/v1/user/login</a>]</p>
+    <pre><code class="lang-JS">//<span class="hljs-keyword">body </span><span class="hljs-meta">data</span>, to login <span class="hljs-keyword">and </span>to test the api
+     {
+       <span class="hljs-string">"email"</span>:<span class="hljs-string">"willi1997.1@gmail.com"</span>,
+        <span class="hljs-string">"password"</span>:<span class="hljs-string">"admin321"</span>,
+     }
+    </code></pre>
     <h2 id="user-endpoints">User endpoints</h2>
     <ol>
         <li>
@@ -393,6 +401,7 @@
         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
         See the License for the specific language governing permissions and
         limitations under the License.</p>
+
 </body>
 
 </html>
