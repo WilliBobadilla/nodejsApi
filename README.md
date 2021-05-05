@@ -277,11 +277,12 @@ Important Note: Is not implemented yet the verification of who is deleting the u
          }
      ```
 
-# Notes :clipboard:
+# Notes-To Do :clipboard:
 
 1. Now all users can delete to another user, so we have to add a role and also the validations for that
+2. Add encription for password storage
 
-## License :page_facing_up:
+# License :page_facing_up:
 
 Copyright 2021 Williams Bobadilla
 

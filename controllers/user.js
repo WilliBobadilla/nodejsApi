@@ -2,6 +2,7 @@
 const { User } = require("../sequelize");
 const bcrypt = require("bcryptjs");
 const token = require("../utils/tokenUtil");
+
 /* POST method for user:
 Example data in body request:
   {
@@ -30,6 +31,14 @@ async function add(req, res, next) {
 async function get(req, res, next) {
   try {
     const query = await User.findAll();
+    // to display the users, make sure that password is not shown
+    // it is just a workarround for this problem
+
+    query.forEach((user) => {
+      console.log(user.password);
+      user.password = "";
+    });
+
     res.status(200).json(query);
   } catch (error) {
     res.status(500).json({ error: error });
@@ -44,6 +53,7 @@ async function getById(req, res, next) {
   try {
     let id = req.params.id;
     const query = await User.findOne({ where: { id: id } });
+    query.password = ""; //hide pass
     if (query == null)
       res.status(404).json({
         error: "There is not User with id " + id,
@@ -160,7 +170,6 @@ async function login(req, res, next) {
     let user = await User.findOne({
       where: { email: req.body.email },
     });
-    console.log(user);
     if (user) {
       //there is an user in db
       //let verifyPass = await bcrypt.compare(req.body.password, user.password);

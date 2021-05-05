@@ -14,9 +14,9 @@ router.get("/", function (req, res, next) {
 
 router.post("/v1/user", userController.add);
 
-//router.get("/v1/user", auth.verifyUser, userController.get);
+router.get("/v1/user", auth.verifyUser, userController.get);
 
-//router.get("/v1/user/:id", auth.verifyUser, userController.getById);
+router.get("/v1/user/:id", auth.verifyUser, userController.getById);
 
 router.put("/v1/user/:id", auth.verifyUser, userController.update);
 
