@@ -80,7 +80,7 @@ async function update(req, res, next) {
       return;
     }
     const dataUpdated = await query.update(data);
-    res.status(200).json({ dataUpdated });
+    res.status(200).json(dataUpdated);
   } catch (error) {
     res.status(500).json({
       error: error,
