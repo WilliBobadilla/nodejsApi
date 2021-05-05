@@ -57,6 +57,13 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 - password: String
 - direction: String
 
+# Postman collection and swagger documentation :mailbox:
+
+You can found this resources at:
+
+- [Postman](https://github.com/WilliBobadilla/nodejsApi/tree/master/postman)
+- [Swagger](https://github.com/WilliBobadilla/nodejsApi/tree/master/swagger)
+
 # EndPoints of the API :page_with_curl:
 
 ## User to test the API
