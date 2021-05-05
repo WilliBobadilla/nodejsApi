@@ -59,6 +59,18 @@ This CRUD is about animals in a vet, all the information is stored in the DB wit
 
 # EndPoints of the API :page_with_curl:
 
+## User to test the API
+
+Data to send in point 2 of the User endpoint: [http://localhost:3000/v1/user/login]
+
+```JS
+//body data, to login and to test the api
+ {
+   "email":"willi1997.1@gmail.com",
+    "password":"admin321",
+ }
+```
+
 ## User endpoints
 
 1. Create User
