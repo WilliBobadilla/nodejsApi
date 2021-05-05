@@ -1,0 +1,21 @@
+[
+    {
+        "name": "jackie",
+        "age": 7,
+        "type": 1,
+        "direction": "Fossati y Palma, San Antonio"
+    },
+    {
+        "name": "Pinkie",
+        "age": 5,
+        "type": 0,
+        "direction": "Arsenales y chaco, San Quintin"
+    },
+    {
+        "name": "Blanqui",
+        "age": 2,
+        "type": 0,
+        "direction": "Cnel. Martinez 154, San Lorenzo"
+    }
+
+]

@@ -1,11 +1,21 @@
 [
     {
-        "name": "Williams",
-        "lastName": "Bobadilla",
-        "telefono": "0975629880",
-        "idNumber": "9999999",
+        "name":"Williams",
+        "lastName":"Bobadilla",
+        "phoneNumber":"777777",
+        "idNumber":"123654789",
         "email":"willi1997.1@gmail.com",
-        "password":"admin321"
+        "password":"admin321",
+        "direction":"San Roque"      
+    },
+    {
+        "name":"Claudio",
+        "lastName":"Aquino",
+        "phoneNumber":"068975321",
+        "idNumber":"3216547",
+        "email":"claudio@gmail.com",
+        "password":"admin321",
+        "direction":"San Antonio" 
     }
    
 ]
